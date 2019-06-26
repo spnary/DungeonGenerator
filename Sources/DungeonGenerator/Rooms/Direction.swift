@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Direction {
+public enum Direction {
     case north
     case south
     case east

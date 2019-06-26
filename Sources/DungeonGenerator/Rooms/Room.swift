@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Room {
+public protocol Room {
     var adjacentRooms: [Direction:Room?] { get }
     var origin: Point { get }
     var size: Size { get }

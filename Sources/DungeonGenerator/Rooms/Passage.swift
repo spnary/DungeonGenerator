@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Passage: Room {
+public struct Passage: Room {
     var adjacentRooms: [Direction : Room?]
     
     let origin: Point
