@@ -8,10 +8,10 @@
 import Foundation
 
 public struct Chamber: Room {
-    var adjacentRooms: [Direction : Room?]
+    public var adjacentRooms: [Direction : Room?]
     
-    let origin: Point
+    public let origin: Point
     
-    let size: Size
+    public let size: Size
     
 }
