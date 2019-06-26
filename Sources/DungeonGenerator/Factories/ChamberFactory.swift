@@ -7,15 +7,19 @@
 
 import Foundation
 
-class ChamberFactory {
+public class ChamberFactory {
     
     var die: DieProtocol
+    
+    public convenience init() {
+        self.init(die: Die(numberOfSides: 4))
+    }
     
     init(die: DieProtocol = Die(numberOfSides: 20)) {
         self.die = die
     }
     
-    func generate(at origin: Point) -> Chamber {
+    public func generate(at origin: Point) -> Chamber {
         let roomSize = generateChamberSize()
         return Chamber(adjacentRooms: [.north: nil,
                                        .south: nil,
