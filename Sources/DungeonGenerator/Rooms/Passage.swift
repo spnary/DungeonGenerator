@@ -8,7 +8,7 @@
 import Foundation
 
 public struct Passage: Room {
-    public var entrances: [Direction : Entrance?]
+    public var entrances: [Direction : Exit?]
     
     public let origin: Point
     

@@ -7,13 +7,13 @@
 
 import Foundation
 
-public enum EntranceType {
+public enum ExitType {
     case door
     case opening
     case secret
 }
 
-public protocol Entrance {
-    var type: EntranceType { get }
+public protocol Exit {
+    var type: ExitType { get }
     var rooms: (Room?, Room?) { get }
 }
