@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol Room {
-    var adjacentRooms: [Direction:Room?] { get }
+    var entrances: [Direction:Entrance?] { get }
     var origin: Point { get }
     var size: Size { get }
 }
