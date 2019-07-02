@@ -7,10 +7,16 @@
 
 import Foundation
 
-public struct Passage: Room {
+public class Passage: Room {
     public var entrances: [Direction : Exit?]
     
     public let origin: Point
     
     public let size: Size
+    
+    public init(entrances: [Direction: Exit?], origin: Point, size: Size) {
+        self.entrances = entrances
+        self.origin = origin
+        self.size = size
+    }
 }

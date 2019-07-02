@@ -113,23 +113,15 @@ class ChamberFactoryTests: XCTestCase {
         XCTAssertEqual(chamber.size, Size(width: 50, height: 80))
     }
     
+    func testChamberCanBeInitializedWithStartingExit() {
+        let chamber = factory.generate(at: origin, startingExit: (.south, Door()))
+        XCTAssertNotNil(chamber.entrances[.south], "Chamber should have an entrance to the south")
+    }
     
     func setupDie(roll: Int) {
         factory.die = FakeDie(roll: roll)
     }
     
-    struct FakeDie: DieProtocol {
-        let numberOfSides = 20
-        
-        private let fixedRoll: Int
-        
-        init(roll: Int) {
-            self.fixedRoll = roll
-        }
-        
-        func roll() -> Int{
-            return fixedRoll
-        }
-    }
+    
 }
 

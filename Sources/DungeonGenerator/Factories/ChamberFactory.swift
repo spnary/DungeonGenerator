@@ -27,6 +27,12 @@ public class ChamberFactory {
                                        .west:nil], origin: origin, size: roomSize)
     }
     
+    public func generate(at origin: Point, startingExit: (Direction, Exit)) -> Chamber {
+        let chamber = generate(at: origin)
+        chamber.entrances[startingExit.0] = startingExit.1
+        return chamber
+    }
+    
     private func generateChamberSize() -> Size {
         let dieRoll = die.roll()
         switch dieRoll {

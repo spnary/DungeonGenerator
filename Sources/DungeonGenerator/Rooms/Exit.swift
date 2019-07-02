@@ -10,7 +10,6 @@ import Foundation
 public enum ExitType {
     case door
     case opening
-    case secret
 }
 
 public protocol Exit {
