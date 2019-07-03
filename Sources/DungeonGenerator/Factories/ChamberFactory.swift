@@ -19,17 +19,13 @@ public class ChamberFactory {
         self.die = die
     }
     
-    public func generate(at origin: Point) -> Chamber {
+    public func generate(at origin: Point, entrance: (Direction, Exit)) -> Chamber {
         let roomSize = generateChamberSize()
-        return Chamber(entrances: [.north: nil,
-                                       .south: nil,
-                                       .east: nil,
-                                       .west:nil], origin: origin, size: roomSize)
-    }
-    
-    public func generate(at origin: Point, startingExit: (Direction, Exit)) -> Chamber {
-        let chamber = generate(at: origin)
-        chamber.entrances[startingExit.0] = startingExit.1
+        let chamber = Chamber(entrance: entrance,
+                              exits: [.north: nil,
+                                          .south: nil,
+                                          .east: nil,
+                                          .west:nil], origin: origin, size: roomSize)
         return chamber
     }
     
