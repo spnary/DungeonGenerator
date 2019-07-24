@@ -9,5 +9,5 @@ import Foundation
 
 class Opening: Exit {
     let type: ExitType = .opening
-    var rooms: (Room?, Room?) = (nil, nil)
+    var room: Room?
 }

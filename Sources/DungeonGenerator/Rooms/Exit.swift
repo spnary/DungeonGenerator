@@ -14,5 +14,5 @@ public enum ExitType {
 
 public protocol Exit {
     var type: ExitType { get }
-    var rooms: (Room?, Room?) { get }
+    var room: Room? { get }
 }
